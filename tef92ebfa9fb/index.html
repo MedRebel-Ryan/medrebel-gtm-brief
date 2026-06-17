@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedRebel + Tech Edge · Strategic Combination</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1828; --navy-deep:#050E18; --cyan:#33CCFF; --cyan-deep:#008CFF; --blue:#005FFF;
+    --ink:#0A1326; --slate:#3D4A5A; --mid:#6B7280; --border:#E4E9F0; --bg:#EEF2F7; --paper:#FFFFFF; --soft:#F4F7FB;
+    --green:#10b981; --gold:#B8860B;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding:34px 18px 80px;}
+  .doc{max-width:1000px;margin:0 auto;background:var(--paper);border-radius:18px;overflow:hidden;box-shadow:0 12px 50px rgba(10,24,40,0.14);}
+  .accent{background:linear-gradient(90deg,#33CCFF 0%,#008CFF 50%,#005FFF 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+  h1,h2,h3,.eyebrow{font-family:'Outfit','DM Sans',sans-serif;}
+
+  /* COVER */
+  .cover{background:radial-gradient(ellipse at 78% 12%, rgba(51,204,255,0.22) 0%, transparent 55%), linear-gradient(135deg,var(--navy) 0%, var(--navy-deep) 100%);color:#fff;padding:56px 56px 48px;}
+  .cover .brandrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:46px;gap:16px;}
+  .cover .brandrow img{height:34px;}
+  .cover .conf{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);text-align:right;}
+  .cover .eyebrow{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:16px;}
+  .cover h1{font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-1px;}
+  .cover h1 b{font-weight:700;}
+  .cover .sub{font-size:18px;color:rgba(255,255,255,0.82);max-width:720px;margin-top:20px;font-weight:400;}
+  .cover .meta{margin-top:34px;display:flex;gap:30px;flex-wrap:wrap;font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:.5px;}
+  .cover .meta b{color:var(--cyan);font-weight:600;}
+
+  /* SECTIONS */
+  .sec{padding:46px 56px;border-bottom:1px solid var(--border);}
+  .sec:last-child{border-bottom:none;}
+  .sec-eyebrow{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan-deep);font-weight:600;margin-bottom:10px;}
+  .sec h2{font-family:'Outfit',sans-serif;font-weight:600;font-size:30px;line-height:1.1;letter-spacing:-0.5px;color:var(--ink);margin-bottom:16px;}
+  .sec p{font-size:16px;color:var(--slate);margin-bottom:14px;}
+  .sec p:last-child{margin-bottom:0;}
+  .lead{font-size:18px;color:var(--ink);font-weight:500;}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr;}}
+
+  .stat{background:var(--soft);border:1px solid var(--border);border-radius:12px;padding:20px 22px;}
+  .stat .n{font-family:'Outfit',sans-serif;font-weight:700;font-size:32px;color:var(--ink);line-height:1;}
+  .stat .n .accent{font-weight:700;}
+  .stat .l{font-size:13.5px;color:var(--mid);margin-top:8px;}
+
+  /* fit columns */
+  .fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .fit .col{border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+  .fit .col .hd{padding:14px 18px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;}
+  .fit .col.te .hd{background:var(--soft);color:var(--slate);}
+  .fit .col.mr .hd{background:linear-gradient(90deg,var(--cyan-deep),var(--blue));color:#fff;}
+  .fit .col ul{list-style:none;padding:10px 18px 18px;}
+  .fit .col li{font-size:14.5px;color:var(--slate);padding:8px 0 8px 22px;position:relative;border-bottom:1px solid var(--border);}
+  .fit .col li:last-child{border-bottom:none;}
+  .fit .col li:before{content:'';position:absolute;left:0;top:15px;width:8px;height:8px;border-radius:50%;background:var(--cyan-deep);}
+  .fit .col li b{color:var(--ink);}
+  @media(max-width:820px){.fit{grid-template-columns:1fr;}}
+
+  .combo{background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:#fff;border-radius:12px;padding:24px 26px;margin-top:18px;}
+  .combo .k{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:8px;}
+  .combo p{color:rgba(255,255,255,0.85);font-size:16px;margin:0;}
+
+  /* asset cards */
+  .asset{background:var(--soft);border:1px solid var(--border);border-radius:12px;padding:22px 22px;border-top:3px solid var(--cyan-deep);}
+  .asset .num{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;color:var(--cyan-deep);font-weight:600;margin-bottom:8px;}
+  .asset h3{font-family:'Outfit',sans-serif;font-weight:600;font-size:18px;color:var(--ink);margin-bottom:8px;line-height:1.2;}
+  .asset p{font-size:14px;color:var(--slate);margin:0;}
+
+  /* operator */
+  .op{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px;}
+  .op .c{background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:16px 18px;}
+  .op .c .ck{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--cyan-deep);font-weight:600;margin-bottom:6px;}
+  .op .c p{font-size:14px;color:var(--slate);margin:0;}
+  @media(max-width:820px){.op{grid-template-columns:1fr;}}
+
+  /* funnel/steps */
+  .fstep{display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:center;background:var(--soft);border:1px solid var(--border);border-left:4px solid var(--cyan-deep);border-radius:10px;padding:14px 18px;margin-top:10px;}
+  .fstep .num{font-family:'Outfit',sans-serif;font-weight:700;font-size:20px;color:var(--cyan-deep);}
+  .fstep b{color:var(--ink);} .fstep span{font-size:14.5px;color:var(--slate);}
+
+  /* AD CREATIVE (light / blue-gradient lm style) */
+  .ad{margin-bottom:24px;} .ad:last-child{margin-bottom:0;}
+  .ad-creative{border-radius:12px;overflow:hidden;border:1px solid var(--border);box-shadow:0 8px 26px rgba(10,24,40,0.14);}
+  .lm-header{background:var(--navy);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .lm-header img{height:26px;}
+  .lm-header .er{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:rgba(51,204,255,0.85);text-transform:uppercase;font-weight:600;}
+  .lm-body{display:grid;grid-template-columns:1.05fr 1fr;min-height:280px;background:#F4F4F8;}
+  .lm-body.flip .lm-photo{order:2;}
+  .lm-photo{background-size:cover;background-position:center;min-height:280px;}
+  .lm-content{padding:32px 34px;display:flex;flex-direction:column;justify-content:center;}
+  .lm-eyebrow{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2.5px;color:var(--cyan-deep);text-transform:uppercase;font-weight:600;margin-bottom:12px;}
+  .lm-h1{font-family:'DM Sans',sans-serif;font-weight:900;font-size:34px;line-height:1.05;letter-spacing:-1.2px;color:var(--ink);}
+  .lm-sub{font-family:'DM Sans',sans-serif;font-size:15px;color:var(--slate);line-height:1.45;margin-top:12px;font-weight:500;}
+  .lm-footer{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;color:var(--mid);text-transform:uppercase;margin-top:18px;padding-top:12px;border-top:1px solid #DDE2EA;}
+  .lm-footer b{color:var(--cyan-deep);}
+  @media(max-width:680px){.fnd{grid-template-columns:1fr !important;}}
+  @media(max-width:820px){.lm-body{grid-template-columns:1fr;}.lm-body.flip .lm-photo{order:0;}}
+
+  .callout{background:var(--soft);border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin-top:16px;}
+  .callout .ck{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan-deep);font-weight:600;margin-bottom:6px;}
+  .note{font-size:12.5px;color:var(--mid);font-style:italic;margin-top:14px;}
+  .pill{display:inline-block;font-family:'DM Mono',monospace;font-size:11px;background:var(--soft);border:1px solid var(--border);border-radius:999px;padding:5px 12px;color:var(--slate);margin:3px 4px 3px 0;}
+
+  /* proposal */
+  .ask{background:linear-gradient(135deg,var(--navy),var(--navy-deep));color:#fff;border-radius:14px;padding:34px 36px;margin-top:8px;}
+  .ask h2{color:#fff;}
+  .ask .big{font-family:'Outfit',sans-serif;font-weight:300;font-size:40px;line-height:1.06;margin:6px 0 14px;}
+  .ask .big b{font-weight:700;}
+  .ask p{color:rgba(255,255,255,0.84);font-size:16px;}
+  .ask .pill{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.16);color:rgba(255,255,255,0.85);}
+
+  .foot{padding:30px 56px;background:var(--navy-deep);color:rgba(255,255,255,0.7);font-size:12.5px;}
+  .foot strong{color:var(--cyan);}
+
+  /* revenue channel rows */
+  .rev{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:14px;}
+  .rev .rh{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--soft);border-bottom:1px solid var(--border);}
+  .rev .rn{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:#fff;background:linear-gradient(135deg,var(--cyan-deep),var(--blue));width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .rev .rt{font-family:'Outfit',sans-serif;font-weight:600;font-size:17px;color:var(--ink);}
+  .rev .rp{margin-left:auto;font-family:'DM Mono',monospace;font-size:12px;color:var(--cyan-deep);font-weight:600;text-align:right;}
+  .rev .rb{padding:14px 18px;font-size:14.5px;color:var(--slate);}
+  .rev .rb b{color:var(--ink);}
+  @media(max-width:560px){.rev .rp{display:none;}}
+
+  /* integration diagram */
+  .diagram{background:linear-gradient(135deg,var(--navy),var(--navy-deep));border-radius:14px;padding:30px 26px;margin-top:8px;}
+  .flow{display:flex;align-items:stretch;justify-content:center;gap:0;flex-wrap:nowrap;}
+  .node{flex:1;min-width:0;background:rgba(255,255,255,0.06);border:1px solid rgba(51,204,255,0.35);border-radius:12px;padding:18px 14px;text-align:center;display:flex;flex-direction:column;justify-content:center;}
+  .node .nk{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;}
+  .node .nv{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:#fff;line-height:1.15;}
+  .node.hub{background:linear-gradient(135deg,rgba(51,204,255,0.18),rgba(0,95,255,0.18));border-color:var(--cyan);}
+  .node.hub img{height:24px;margin:0 auto 6px;display:block;}
+  .arrow{display:flex;align-items:center;justify-content:center;padding:0 6px;color:var(--cyan);font-size:22px;font-weight:700;flex-shrink:0;}
+  .flow-cap{text-align:center;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);margin-top:16px;}
+  .badge{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#0A1828;background:var(--cyan);border-radius:999px;padding:5px 12px;font-weight:700;}
+  .roadmap{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px;}
+  .roadmap .chip{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.75);border:1px dashed rgba(255,255,255,0.3);border-radius:999px;padding:5px 12px;}
+  @media(max-width:560px){.flow{flex-direction:column;gap:10px;}.arrow{transform:rotate(90deg);padding:2px 0;}}
+
+  .tw{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  @media(max-width:560px){
+    body{padding:0 0 40px;}
+    .doc{border-radius:0;box-shadow:none;}
+    .cover{padding:30px 20px 26px;}
+    .cover .brandrow{margin-bottom:26px;}
+    .cover .brandrow img{height:28px;}
+    .cover .conf{font-size:10px;}
+    .cover .meta{gap:14px 20px;margin-top:22px;}
+    .cover .sub{font-size:16px;}
+    .sec{padding:30px 20px;}
+    .sec h2{font-size:23px;}
+    .sec p{font-size:15px;}
+    .lead{font-size:16.5px;}
+    .lm-content{padding:24px 22px;}
+    .lm-h1{font-size:28px;}
+    .ask{padding:26px 22px;}
+    .ask .big{font-size:30px;}
+    .foot{padding:24px 20px;}
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="brandrow">
+      <img src="logo-dark-horizontal.svg" alt="MedRebel">
+      <span class="conf">Confidential · Prepared for Tech Edge<br>Strategic Discussion Only</span>
+    </div>
+    <div class="eyebrow">An Offer to Team Up</div>
+    <h1>Let's build the new frontier of<br>healthcare IT infrastructure. <b class="accent">Together.</b></h1>
+    <p class="sub">You are scaling Tech Edge, and I want to help you do it faster. I sell across verticals and close hard deals, and I would bring my skills, my network, and 15 months of built assets with me. You get an operator who drives growth, with deep healthcare expertise and a portfolio most companies would have to build.</p>
+    <div class="meta">
+      <span>PREPARED FOR <b>Brent, CEO · Tech Edge</b></span>
+      <span>FROM <b>Ryan Jacox, Founder &amp; CEO · MedRebel</b></span>
+      <span>RE <b>Teaming up</b></span>
+    </div>
+  </div>
+
+  <!-- THE OPERATOR -->
+  <div class="sec">
+    <div class="sec-eyebrow">Why Me</div>
+    <h2>Tech Edge is built to grow. I'm the rocket fuel to get there faster.</h2>
+    <p class="lead">You have the engineers, the IT and networking experts, the security, and the infrastructure clients trust. What drives faster growth on top of that is a closer who can sell in any vertical, and that is what I do. As Founder and CEO of MedRebel since March 2025, I have proven it, with deep roots in healthcare and 15 months of built assets to match.</p>
+    <div class="op">
+      <div class="c"><div class="ck">Runs point on sales</div><p>Closed deals in the $100K range, and a full-spectrum seller who runs point on enterprise calls: cold outreach, trade-show floors, pitch decks, public speaking, video and podcasts.</p></div>
+      <div class="c"><div class="ck">Bridges Latin America</div><p>Speaks fluent Spanish and lived in Ecuador for two years. A built-in bridge for Colombia and Mexico expansion.</p></div>
+      <div class="c"><div class="ck">Solves hard integrations</div><p>Built the only authorized Open Dental to GoHighLevel integration: two-way sync of patients, appointments, providers, and procedures, plus intake and consent write-back, where most vendors only push demographics. Also the only HIPAA-compliant AI fax integration to GHL (Upland).</p></div>
+      <div class="c"><div class="ck">Owns the network</div><p>Deeply connected across independent dentist communities and Facebook groups, the exact market the combined company wants.</p></div>
+      <div class="c"><div class="ck">Teams, CS, and relationships</div><p>Builds and manages teams, owns Customer Success, and resolves client conflict, with enterprise and independent clients alike.</p></div>
+      <div class="c"><div class="ck">Plays team ball</div><p>Brings the humility this requires. Defers to Tech Edge's enterprise expertise and lets Brent hold the final call.</p></div>
+    </div>
+  </div>
+
+  <!-- ASSETS -->
+  <div class="sec">
+    <div class="sec-eyebrow">What I Bring With Me</div>
+    <h2>Fifteen months of assets, already built.</h2>
+    <p>I bring these to Tech Edge, and I am open to a deal that gives Tech Edge equity in MedRebel's assets. Fifteen months of work the combined company would not have to build from scratch.</p>
+    <div class="grid3">
+      <div class="asset"><div class="num">Asset 01</div><h3>The integration moat</h3><p>We own the IP for the Open Dental to GoHighLevel integration, and we are the only vendor on Open Dental's Authorized Vendor List in the GHL ecosystem. A defensible position in a market everyone wants into.</p></div>
+      <div class="asset"><div class="num">Asset 02</div><h3>The HR + HIPAA app</h3><p>Fully built and practice-tested: state-compliant handbooks, audit-ready HIPAA, onboarding, training, PTO. Pre-revenue but deploy-ready, the door-opener into compliance-anxious practices, and a natural upsell into Tech Edge's white-glove HIPAA audits.</p></div>
+      <div class="asset"><div class="num">Asset 03</div><h3>Revenue and proof</h3><p>$8,500 in MRR and 30+ active users, loyal from day one. Backed by the Hockley Dental case study: real numbers from a real practice.</p></div>
+      <div class="asset"><div class="num">Asset 04</div><h3>A clean house</h3><p>Zero debt, no liabilities, no interest. Investor-backed, not loan-saddled. A clean foundation and a simple path forward.</p></div>
+      <div class="asset"><div class="num">Asset 05</div><h3>The dental network</h3><p>Dr. Bessey and Dr. Gonzales as strategic advisors. They open the dental market through conventions and communities, and bring the trust dentists value most.</p></div>
+    </div>
+  </div>
+
+  <!-- REVENUE CHANNELS -->
+  <div class="sec">
+    <div class="sec-eyebrow">Revenue Channels</div>
+    <h2>Five ways we can make money with these assets.</h2>
+    <p>None of this is required for the hire to make sense. It is the upside that comes with me. If we choose to monetize the assets, here are five low-overhead revenue lines, most riding distribution that already exists.</p>
+
+    <div class="rev" style="margin-top:18px;">
+      <div class="rh"><div class="rn">1</div><div class="rt">The platform</div><div class="rp">$300 to $2,000 / mo</div></div>
+      <div class="rb">MedRebel OS at <b>$499/mo</b> with add-ons up to a <b>~$2,000/mo</b> premium tier. MedRebel HR at <b>$300/mo</b> is the hook into practices nationwide. Land with compliance, expand into the full OS.</div>
+    </div>
+
+    <div class="rev">
+      <div class="rh"><div class="rn">2</div><div class="rt">The Open Dental integration (agency channel)</div><div class="rp">$100 to $150 / mo · ~75% margin</div></div>
+      <div class="rb">We are the <b>only vendor on Open Dental's Authorized Vendor List inside GoHighLevel</b>. It sells at <b>$100/mo</b> standard, <b>$150/mo</b> for KPI, per sub-account. Our offshore dev team (Authority Entrepreneurs, GHL-certified) handles the build, onboarding, and upkeep for a flat <b>$25/mo per sub-account</b>, our only real cost, leaving <b>$75 to $125/mo margin</b>, hands-off. Distribution is free: GHL Facebook groups with 200,000+ members and weekly demand for dental PMS integrations. Larger agencies run 20+ sub-accounts. <b>Illustrative: 20 sub-accounts is ~$2,000/mo revenue, ~$1,500/mo net.</b> The competition is either a pretender or on Open Dental's dangerous-vendor list. We follow the documentation.</div>
+    </div>
+
+    <div class="rev">
+      <div class="rh"><div class="rn">3</div><div class="rt">The integration roadmap</div><div class="rp">Dentrix · Eaglesoft next</div></div>
+      <div class="rb">We own the base-layer code for Open Dental to GoHighLevel. We add <b>Dentrix and Eaglesoft</b> on the same foundation and become the go-to integration agency in the GHL ecosystem: tens of thousands of agencies, 1M+ businesses.</div>
+    </div>
+
+    <div class="rev">
+      <div class="rh"><div class="rn">4</div><div class="rt">HR app, white-labeled inside GHL</div><div class="rp">$150 / mo per sub-account</div></div>
+      <div class="rb">MedRebel HR is <b>already live in the GoHighLevel App Marketplace</b>. We white-label it to agencies at <b>$150/mo per sub-account</b>; they upsell at any price. HR plus compliance is a top agency upsell.</div>
+    </div>
+
+    <div class="rev">
+      <div class="rh"><div class="rn">5</div><div class="rt">Trusted software partner (the vibe-coding era)</div><div class="rp">The moat: HIPAA + trust</div></div>
+      <div class="rb">Vibe coding exploded, but it cannot manufacture trust in healthcare. We take healthcare apps, fix the security leaks, and deploy them compliantly at scale. Our Open Dental integration proves we build software PMS vendors approve. When anyone can ship an app, <b>being the team that ships it secure and HIPAA-ready is the moat</b>, and MedRebel plus Tech Edge has that trust in spades.</div>
+    </div>
+    <p class="note">Pricing reflects MedRebel's current and proposed rates. The 20-sub-account figure is an illustrative example, not a forecast. Channel economics scale with agency adoption.</p>
+  </div>
+
+  <!-- INTEGRATION MOAT / DIAGRAM -->
+  <div class="sec">
+    <div class="sec-eyebrow">The Moat</div>
+    <h2>The only authorized Open Dental integration in the GoHighLevel ecosystem.</h2>
+    <p>Practice management data is the hardest, most trust-sensitive layer in dental software. We built it by the documentation, which is why we are authorized and the pretenders are not. Everything else builds on this.</p>
+    <div class="diagram">
+      <div class="flow">
+        <div class="node"><div class="nk">Practice Management</div><div class="nv">Open Dental</div></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node hub"><img src="logo-dark-horizontal.svg" alt="MedRebel"><div class="nk">Authorized Integration</div><div class="nv">MedRebel</div></div>
+        <div class="arrow">&rarr;</div>
+        <div class="node"><div class="nk">CRM + Marketing</div><div class="nv">GoHighLevel</div></div>
+      </div>
+      <div class="roadmap">
+        <span class="chip">+ KPI sync</span>
+        <span class="chip">+ HIPAA-compliant AI fax (Upland)</span>
+        <span class="chip">Dentrix (roadmap)</span>
+        <span class="chip">Eaglesoft (roadmap)</span>
+      </div>
+      <div class="flow-cap" style="margin-top:18px;"><span class="badge">Only Authorized Open Dental Vendor in GHL</span></div>
+    </div>
+    <h3 style="font-family:'Outfit';font-weight:600;font-size:18px;margin:26px 0 0;color:var(--ink);">Most agencies stop at demographics. We sync the whole practice.</h3>
+    <p style="margin-top:6px;">Nearly every GHL "integration" is a one-way push of names and numbers. Ours is a two-way clinical, scheduling, and intake bridge, live in production since Q4 2025. That is why we are authorized.</p>
+    <div class="fit" style="margin-top:14px;">
+      <div class="col te">
+        <div class="hd">What most vendors do</div>
+        <ul>
+          <li>One-way patient demographic sync: name, phone, email.</li>
+          <li>Breaks on invalid data, with no de-duplication.</li>
+          <li>No appointments, no schedule, no providers.</li>
+          <li>No reconciliation, so the records quietly drift apart.</li>
+        </ul>
+      </div>
+      <div class="col mr">
+        <div class="hd">What MedRebel does</div>
+        <ul>
+          <li><b>Two-way</b> demographics, contact info, patient status, and consent flags.</li>
+          <li><b>Full appointment sync:</b> times, providers, operatories, procedures, and statuses (scheduled, kept, broken, no-show).</li>
+          <li><b>Patient intake and consent documents</b> captured in GoHighLevel write back into Open Dental, so signed forms and new-patient data land in the chart with zero front-desk re-keying.</li>
+          <li><b>Provider, operatory, and status mapping</b> between Open Dental and GHL calendars and users.</li>
+          <li><b>Schedule blockouts, historical reconciliation,</b> and a KPI plus AI-insights analytics layer.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:14px;font-size:14.5px;color:var(--slate);"><b>Built to survive production:</b> OAuth (no stored passwords, revocable any time), the Open Dental eConnector as a secure local bridge, managed queues, and reconciliation every 15 minutes so no dropped webhook drifts the systems apart. Bad phone and email data is caught before it breaks a campaign; every failed sync is logged.</p>
+    <p style="margin-top:10px;"><span class="pill">Two-way sync</span><span class="pill">Appointments + procedures</span><span class="pill">Intake + consent write-back</span><span class="pill">Provider / operatory mapping</span><span class="pill">Blockouts + time off</span><span class="pill">Historical reconciliation</span><span class="pill">KPI + AI insights</span><span class="pill">OAuth secured</span><span class="pill">Live since Q4 2025</span></p>
+    <p class="note">A polished interactive 3D version of this architecture is also built and available as a separate asset. Full field-level scope lives in the integration repo and the MedRebel IT documentation.</p>
+  </div>
+
+  <!-- MARKET / THE PRIZE -->
+  <div class="sec">
+    <div class="sec-eyebrow">The Prize</div>
+    <h2>A category-sized opportunity across two markets.</h2>
+    <p>The demand is already moving. We are not creating a market. We are standing in front of one with the only approved solution and a trusted brand.</p>
+    <div class="grid3" style="margin-top:18px;">
+      <div class="stat"><div class="n"><span class="accent">1M+</span></div><div class="l">Businesses on GoHighLevel, served by tens of thousands of agencies. Our integrations and HR app sell into that installed base.</div></div>
+      <div class="stat"><div class="n">200K+ <span class="accent">members</span></div><div class="l">In the GHL Facebook communities we already market to, with weekly inbound demand for dental PMS integrations.</div></div>
+      <div class="stat"><div class="n"><span class="accent">180K+</span></div><div class="l">Dental practices in the United States, the majority still independent. Every one is a prospect for the integration and the compliance app.</div></div>
+    </div>
+    <div class="combo" style="margin-top:16px;">
+      <div class="k">And the second market</div>
+      <p>Tech Edge is expanding healthcare IT into Colombia and Latin America. I speak Spanish and lived in Ecuador for two years. Same playbook, same trust-first approach, a fast-growing region, a bilingual operator to lead it.</p>
+    </div>
+    <p class="note">Platform and market figures are third-party estimates for context, not guarantees. Sources noted in the accompanying materials.</p>
+  </div>
+
+  <!-- GROWTH ENGINE / AD SHOWCASE -->
+  <div class="sec">
+    <div class="sec-eyebrow">The Growth Engine, Ready to Deploy</div>
+    <h2>This is not a concept. The creative is finished and on brand.</h2>
+    <p>The engine that drives the HIPAA app is already built: a clean creative system across Facebook, Instagram, and LinkedIn, each ad mapped to a page and a goal. The day we team up, it can turn on. A sample below.</p>
+
+    <!-- AD 1: HR app -->
+    <div class="ad" style="margin-top:18px;">
+      <div class="ad-creative">
+        <div class="lm-header"><img src="logo-dark-horizontal.svg" alt="MedRebel"><span class="er">MedRebel HR · HIPAA + HR</span></div>
+        <div class="lm-body">
+          <div class="lm-photo" style="background-image:url('high%20five%20with%20male%20nurse%20and%20female%20doctor%20color%20fix.png');"></div>
+          <div class="lm-content">
+            <div class="lm-eyebrow">Audit-Ready Compliance</div>
+            <h2 class="lm-h1">Audit-proof your practice. <span class="accent">In minutes, not months.</span></h2>
+            <p class="lm-sub">State-compliant handbooks, audit-ready HIPAA, training, and PTO. One platform, no new logins for your team.</p>
+            <div class="lm-footer"><b>try.medrebel.io</b> · Book a 15-Minute Demo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AD 2: OM Leadership Guide -->
+    <div class="ad">
+      <div class="ad-creative">
+        <div class="lm-header"><img src="logo-dark-horizontal.svg" alt="MedRebel"><span class="er">Free Field Guide</span></div>
+        <div class="lm-body flip">
+          <div class="lm-photo" style="background-image:url('doctors%20and%20om%20kpi%20meeting%20color%20fix.png');"></div>
+          <div class="lm-content">
+            <div class="lm-eyebrow">Built For The Person Running The Day</div>
+            <h2 class="lm-h1">Give your office manager <span class="accent">a system to lead.</span></h2>
+            <p class="lm-sub">A free leadership field guide for the person who actually runs the practice. Real frameworks for building systems, not fluff.</p>
+            <div class="lm-footer"><b>leadership.medrebel.io</b> · Free Guide</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AD 3: founder case study -->
+    <div class="ad">
+      <div class="ad-creative" style="background:#0A1828;">
+        <div class="fnd" style="display:grid;grid-template-columns:1fr 1fr;min-height:360px;">
+          <div style="padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <img src="logo-dark-horizontal.svg" alt="MedRebel" style="height:26px;margin-bottom:26px;">
+              <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;color:#33CCFF;text-transform:uppercase;font-weight:600;margin-bottom:16px;">Hockley Dental · NW Houston</div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:54px;font-weight:900;color:#fff;line-height:0.94;letter-spacing:-2px;">Systems<br><span style="color:#33CCFF;">+ Heart</span></div>
+              <p style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:16px;color:rgba(255,255,255,0.85);line-height:1.4;margin-top:22px;max-width:320px;">What if 230 new patients a month was the <span style="color:#33CCFF;">least exciting</span> part of the story.</p>
+            </div>
+            <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-top:22px;">hockley.medrebel.io · Read the Case Study</div>
+          </div>
+          <div style="position:relative;overflow:hidden;background:#0A1828;">
+            <div style="position:absolute;inset:0;background-image:url('dental%20practice%20hallway%20modern.jpeg');background-size:cover;background-position:center;opacity:0.30;"></div>
+            <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,24,40,0.55) 0%,rgba(10,24,40,0.25) 100%);"></div>
+            <div style="position:relative;z-index:2;padding:26px 26px 26px 22px;display:flex;flex-direction:column;gap:20px;height:100%;justify-content:center;">
+              <div style="display:flex;align-items:center;gap:14px;">
+                <div style="width:74px;height:74px;border-radius:50%;background-image:url('bessey.png');background-size:115%;background-position:center;background-color:#0A1828;border:2px solid #33CCFF;flex-shrink:0;"></div>
+                <div><div style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-0.3px;">Dr. Chris Bessey, DDS</div><div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:#33CCFF;text-transform:uppercase;margin-top:5px;font-weight:600;">Strategic Advisor</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:14px;">
+                <div style="width:74px;height:74px;border-radius:50%;background-image:url('gonzales.png');background-size:115%;background-position:center;background-color:#0A1828;border:2px solid #33CCFF;flex-shrink:0;"></div>
+                <div><div style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-0.3px;">Dr. Jose Gonzales, DDS</div><div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:#33CCFF;text-transform:uppercase;margin-top:5px;font-weight:600;">Strategic Advisor</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:14px;">
+                <div style="width:74px;height:74px;border-radius:50%;background-image:url('Ryan_Jacox.png');background-size:115%;background-position:center;background-color:#0A1828;border:2px solid #33CCFF;flex-shrink:0;"></div>
+                <div><div style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-0.3px;">Ryan Jacox</div><div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:#33CCFF;text-transform:uppercase;margin-top:5px;font-weight:600;">Founder · CEO</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note">Creative shown in LinkedIn / Facebook format. The full library also ships in square and vertical for Instagram feed and stories. This is a sample of a complete, deploy-ready system.</p>
+  </div>
+
+  <!-- HOW WE COMPLEMENT -->
+  <div class="sec">
+    <div class="sec-eyebrow">How We Complement</div>
+    <h2>Small practices start with MedRebel. They grow into Tech Edge.</h2>
+    <p>Independent and small practices need affordable, easy technology to get up and running. That is MedRebel. As they grow into multi-location groups and enterprises, they need the infrastructure, the security, and the managed services Tech Edge provides. One naturally feeds the other.</p>
+    <div class="fit">
+      <div class="col mr">
+        <div class="hd">MedRebel: where they start</div>
+        <ul>
+          <li><b>Affordable and easy to adopt.</b> HR, compliance, and integration tools that get a small or independent practice running fast.</li>
+          <li><b>The on-ramp.</b> Easy to say yes to, with product and proof already in market and trust built in the independent community.</li>
+        </ul>
+      </div>
+      <div class="col te">
+        <div class="hd">Tech Edge: where they grow</div>
+        <ul>
+          <li><b>Enterprise infrastructure, security, and managed services</b> for the multi-location groups and high-value accounts Tech Edge already serves.</li>
+          <li><b>The next step up.</b> As a practice scales, it graduates into the full Tech Edge stack. The same customer, a bigger relationship.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="combo">
+      <div class="k">The point</div>
+      <p>MedRebel is the affordable on-ramp that earns trust with small and independent practices. As they grow, they graduate into Tech Edge's enterprise solutions. The same customer, served at every stage, and a pipeline that feeds itself.</p>
+    </div>
+  </div>
+
+  <!-- PRODUCT -->
+  <div class="sec">
+    <div class="sec-eyebrow">The Product</div>
+    <h2>MedRebel HR: the hook, and the upsell.</h2>
+    <p>MedRebel HR is a self-managing HR and HIPAA compliance suite for independent dental and medical practices. More than templates: state-compliant handbooks, audit-ready HIPAA, onboarding, training, certification tracking, and PTO in one place. Fully built, practice-tested, ready to deploy.</p>
+    <div class="grid2" style="margin-top:16px;">
+      <div class="callout"><div class="ck">The hook</div><p style="font-size:14.5px;color:var(--slate);margin:0;">Compliance anxiety is the fastest way into a practice. The app opens the door with owners worried about an audit, at a price easy to say yes to.</p></div>
+      <div class="callout"><div class="ck">The upsell</div><p style="font-size:14.5px;color:var(--slate);margin:0;">Clients who want white-glove service get Tech Edge's full HIPAA compliance and audits. The app is the entry point; the managed service is the expansion.</p></div>
+    </div>
+    <h3 style="font-family:'Outfit';font-weight:600;font-size:18px;margin:26px 0 0;color:var(--ink);">What it actually is, by the build</h3>
+    <p style="margin-top:6px;">Not a prototype or a no-code mockup. A real, multi-tenant, security-hardened app that holds up to diligence.</p>
+    <div class="grid3" style="margin-top:14px;">
+      <div class="stat"><div class="n"><span class="accent">83</span></div><div class="l">Database tables, isolated per practice by 276 row-level-security policies.</div></div>
+      <div class="stat"><div class="n"><span class="accent">48</span></div><div class="l">Supabase edge functions powering HIPAA, handbook, sync, and AI workflows.</div></div>
+      <div class="stat"><div class="n">~100 <span class="accent">components</span></div><div class="l">React components across 34 page views, a full production application.</div></div>
+    </div>
+
+    <div class="callout" style="margin-top:16px;">
+      <div class="ck">Human hours + AI hours</div>
+      <p style="font-size:15px;color:var(--slate);margin:0;">Independent estimate: <b>2,500+ senior developer hours</b> of work, from database architecture to backend to UI to five security audit rounds. Built in-house in about three months: roughly <b>325 founder hours, amplified by AI into a 2,500-hour engineering effort, a near 7x multiplier</b>. Fully owned MedRebel IP, reviewed by our offshore dev team (Authority Entrepreneurs) and a senior engineer. That is exactly what the trusted-software-partner channel sells.</p>
+    </div>
+
+    <h3 style="font-family:'Outfit';font-weight:600;font-size:18px;margin:24px 0 0;color:var(--ink);">The compliance engine</h3>
+    <p style="margin-top:6px;">An audit-ready HIPAA manual from a 10-minute survey in about 3 minutes, scored against 50+ canonical clauses and floored at 95+/100. Plus a compliance analyzer with CFR citations, a NIST 800-30 risk generator, a breach workflow, a one-click audit binder, and auto-generated annual training, all per-location.</p>
+    <p style="margin-top:10px;font-size:14.5px;color:var(--slate);"><b>What it removes:</b> a $20,000 to $50,000 annual compliance burden per multi-location practice, and the audit gaps that become a $50,000 to $1.5M OCR fine after a breach.</p>
+    <p style="margin-top:10px;"><span class="pill">HIPAA manual in 3 min</span><span class="pill">95 to 100/100 scored</span><span class="pill">Compliance analyzer</span><span class="pill">NIST 800-30 risk</span><span class="pill">Breach workflow</span><span class="pill">Audit binder PDF</span><span class="pill">Per-location</span></p>
+
+    <p class="note">The complete MedRebel HR specification report accompanies this brief as a separate document. Build metrics are from the product's current architecture; the 2,500-hour figure is an independent engineering estimate.</p>
+  </div>
+
+  <!-- THE PROPOSAL -->
+  <div class="sec">
+    <div class="sec-eyebrow">The Proposal</div>
+    <div class="ask">
+      <h2>Let's grow Tech Edge <span class="accent">together.</span></h2>
+      <div class="big">I'm not here to sell you a company. I'm here to <b class="accent">join your team and help you grow.</b></div>
+      <p>I bring the sales, the marketing, and the assets, and I am open to a deal that gives Tech Edge <span class="accent">equity in MedRebel's assets</span>. We can work out the specifics together.</p>
+      <p style="color:#fff;font-weight:600;font-size:17px;margin-top:6px;">Tell me what the right arrangement looks like for you, and <span class="accent">let's talk.</span></p>
+      <p style="margin-top:14px;"><span class="pill">Healthcare sales + marketing</span><span class="pill">15 months of built assets</span><span class="pill">Equity-in-assets options</span><span class="pill">Ready to start</span></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <strong>MedRebel</strong> · Systems + Heart · ryan@medrebel.io · medrebel.io<br><br>
+    Confidential. This brief is a preliminary discussion document prepared for Tech Edge and does not constitute an offer, a commitment, or a binding term sheet. Any combination would be subject to mutual due diligence and definitive written agreements. Figures reflect MedRebel's current operating snapshot and are provided in good faith for discussion purposes.
+  </div>
+
+</div>
+</body>
+</html>
